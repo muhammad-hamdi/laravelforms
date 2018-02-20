@@ -1,7 +1,7 @@
 # Laravel Forms
 >Laravel package for handling forms and form inputs
 
-###Installation
+### Installation
 
 download the package
 ```
@@ -31,7 +31,7 @@ then add the aliases
 ],
 ```
 
-##Documentation
+## Documentation
 
 1- Form properties
 
@@ -43,7 +43,7 @@ the form automatically adds the csrf field when you begin it
 
 the default form method is `POST`
 
-####Specifying form action & method
+#### Specifying form action & method
 
 ```
 echo Form::begin($url, $method);
