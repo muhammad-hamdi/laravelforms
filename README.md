@@ -80,3 +80,98 @@ package provides the following form inputs
 - date
 - submit
 
+##### instantiating input components
+
+```
+echo Form::text()
+
+echo Form::email()
+
+echo Form::password()
+
+echo Form::number()
+
+echo Form::textarea()
+
+echo Form::select()
+
+echo Form::date()
+
+echo Form::submit()
+```
+
+##### Default properties and methods
+
+- setting input name
+```
+Form::text()->name('test')
+```
+
+- setting input value
+```
+Form::text()->value($model->title)
+```
+
+- setting input placeholder
+```
+Form::text()->placeholder('Your email...')
+```
+
+- setting input class
+```
+Form::text()->class('form-control custom-class')
+or
+Form::text()->class('form-control')->class('custom-class')
+```
+
+- setting input id
+```
+Form::text()->id('some-id')
+/*
+since most inputs only have one id you cannot add another id by nesting the methods
+because it'll be overriden but you can add spaces between ids in the method if you want
+*/
+Form::text()->id('id1 id2')
+```
+
+- setting input as required
+```
+Form::text()->required()
+```
+
+##### Input labels
+
+you can add a label to the input by nesting the `label()` method
+
+```
+Form::text()->label('label title')
+```
+
+you can add classes for your label by passing them as a second string argument and separate them with space
+
+```
+Form::text()->label('label title', 'class1 class2')
+```
+
+##### Input specific methods
+
+- number
+
+the number input has two special methods `min()` and `max()`
+```
+Form::number()->name('age')->min(18)->max(60)
+```
+
+- select
+
+the select input has `options()` method
+```
+Form::select()->name('users')->options(['Dennis Ritchie' => 1, 'Bill Gates' => 2, 'Steve Jobs' => 3])
+```
+
+## Author
+This package made by [Muhammad Hamdi](http://facebook.com/neutrino3)
+
+## Contributing
+
+Contributions, questions and comments are all welcome and encouraged. For code contributions submit a pull request with unit test.
